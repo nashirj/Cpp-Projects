@@ -30,16 +30,13 @@ void draw(int chances, char* user_word, char mode)
 
 
 void drawLine(){
-    //fflush(stdout);
     //line drawing animation
     for (int i = 0; i < 20; i++)
     {
         cout << "-";
-        //fflush(stdout);
-        //sleeper(50);
+        fflush(stdout);
+        sleeper(70);
     }
-    //temp
-    sleeper(1200);
     cout << endl;
 }
 

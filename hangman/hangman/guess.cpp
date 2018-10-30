@@ -79,9 +79,6 @@ char difficulty(int &chances){
     return mode;
 }
 
-
-
-
 bool alreadyGuessed(char user_in){
     static bool guessed[26] = {0};
     if (guessed[user_in - 97] == false){

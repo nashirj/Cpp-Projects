@@ -29,7 +29,6 @@ static std::string grid[7] = {
 void sleeper(int ms);
 void clearScreen();
 
-
 static std::string lib[lib_size] = {
  "abruptly",
  "absurd",
@@ -243,6 +242,6 @@ static std::string lib[lib_size] = {
  "zilch",
  "zipper",
  "zodiac",
-    "zombie"};
+ "zombie"};
 
 #endif /* globals_h */
