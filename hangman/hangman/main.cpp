@@ -40,7 +40,22 @@ int main()
     
     while (chances > 0)
     {
+        cout << "letters guessed so far: ";
+        ///////////////////////////////////////////////////////////////////////////
+        // find a way to make this constant time
+        // maybe update the grid after each new letter is guessed?
+        // that way, just need to print the updated grid instead of calling
+        // alreadyGuessed 26 times for every iteration
+        ///////////////////////////////////////////////////////////////////////////
+        for(int i = 0; i < 26; i++){
+            char curr = static_cast<char>(i + 'a');
+            if (alreadyGuessed(curr)){
+                cout << curr << " ";
+            }
+        }
+        cout << endl;
         cout << "guess a single letter: ";
+
         user_in = getInput(word);
         if (user_in == 0) //if user inputs a letter that they have already guessed
             continue;
@@ -68,7 +83,7 @@ int main()
             draw(chances, user_word, mode);
     }
     
-    cout << "you lost... the word was " << word << "..." << endl;
+    cout << "you lost... the word was " << word << endl;
     cout << "thanks for playing!" << endl;
     return 0;
 }

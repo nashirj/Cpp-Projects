@@ -74,19 +74,20 @@ char difficulty(int &chances){
     }
     
     drawLine();
-    //ask professor Nguyen about this, should print, then sleep, then print, etc...
     
     return mode;
 }
 
+void setGuessed(char user_in){
+    guessed[user_in - 'a'] = true;
+    return;
+}
+
 bool alreadyGuessed(char user_in){
-    static bool guessed[26] = {0};
-    if (guessed[user_in - 97] == false){
-        guessed[user_in - 97] = true;
-        return false;
-    }
-    else
+    if (guessed[user_in - 'a'])
         return true;
+    else
+        return false;
 }
 
 char getInput(string answer){
@@ -110,16 +111,15 @@ char getInput(string answer){
         }
     }
     
-    if (isupper(user_in[0]))
-        guess = tolower(user_in[0]);
-    else
-        guess = user_in[0];
+    guess = (islower(user_in[0])) ? user_in[0] : tolower(user_in[0]);
     
     //if user inputs a char that they have already guessed, go to next iteration of loop
     if (alreadyGuessed(guess)){
-        cout << "you have already guessed that letter..." << endl;
+        cout << "you have already guessed that letter..." << endl << endl;
         return 0;
     }
-    else
+    else{
+        setGuessed(guess);
         return guess;
+    }
 }

@@ -24,7 +24,6 @@ void draw(int chances, char* user_word, char mode)
     
     cout << "you have " << chances << " chances left" << endl;
     cout << "the word is: " << user_word << endl;
-    cout << endl;
     
 }
 
